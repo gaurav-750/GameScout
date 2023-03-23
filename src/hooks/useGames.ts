@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import apiClient, { CanceledError } from "../services/apiClient";
 
-interface Platform {
+export interface Platform {
   id: number;
   name: string;
   slug: string;
