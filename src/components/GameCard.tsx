@@ -1,15 +1,8 @@
-import {
-  Card,
-  CardHeader,
-  Heading,
-  Image,
-  Text,
-  CardBody,
-  HStack,
-} from "@chakra-ui/react";
+import { Card, Heading, Image, CardBody, HStack } from "@chakra-ui/react";
 import { Game } from "../hooks/useGames";
 import CriticScore from "./CriticScore";
 import PlatformList from "./PlatformIconList";
+import getOptimizedImage from "./../services/getOptimizedImage";
 
 interface Props {
   game: Game;
@@ -17,12 +10,11 @@ interface Props {
 
 const GameCard = (Props: Props) => {
   const { game } = Props;
-  console.log("game", game);
 
   return (
     <>
       <Card borderRadius={10} overflow="hidden">
-        <Image src={game.background_image} />
+        <Image src={getOptimizedImage(game.background_image)} />
         <CardBody>
           <Heading size="md">{game.name}</Heading>
 
