@@ -13,7 +13,7 @@ const GameCard = (Props: Props) => {
 
   return (
     <>
-      <Card width="300px" borderRadius={10} overflow="hidden">
+      <Card borderRadius={10} overflow="hidden">
         <Image src={getOptimizedImage(game.background_image)} />
         <CardBody>
           <Heading size="md">{game.name}</Heading>
