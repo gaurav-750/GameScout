@@ -1,7 +1,20 @@
-import { HStack, Image, List, ListItem, Spinner, Text } from "@chakra-ui/react";
-import useGenres from "./../hooks/useGenres";
+import {
+  HStack,
+  Image,
+  Link,
+  List,
+  ListItem,
+  Spinner,
+  Text,
+  Button,
+} from "@chakra-ui/react";
+import useGenres, { Genre } from "./../hooks/useGenres";
 
-const GenreList = () => {
+interface Props {
+  handleGenre: (genre: Genre) => void;
+}
+
+const GenreList = ({ handleGenre }: Props) => {
   const { genres, isLoading } = useGenres();
 
   return (
@@ -25,7 +38,13 @@ const GenreList = () => {
                 boxSize="32px"
                 borderRadius={8}
               />
-              <Text fontSize="lg">{genre.name}</Text>
+              <Button
+                variant="link"
+                onClick={() => handleGenre(genre)}
+                fontSize="lg"
+              >
+                {genre.name}
+              </Button>
             </HStack>
           </ListItem>
         ))}
