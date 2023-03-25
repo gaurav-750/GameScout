@@ -12,9 +12,10 @@ import useGenres, { Genre } from "./../hooks/useGenres";
 
 interface Props {
   handleGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ handleGenre }: Props) => {
+const GenreList = ({ handleGenre, selectedGenre }: Props) => {
   const { genres, isLoading } = useGenres();
 
   return (
@@ -39,6 +40,9 @@ const GenreList = ({ handleGenre }: Props) => {
                 borderRadius={8}
               />
               <Button
+                noOfLines={1}
+                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                colorScheme={genre.id === selectedGenre?.id ? "green" : "gray"}
                 variant="link"
                 onClick={() => handleGenre(genre)}
                 fontSize="lg"
