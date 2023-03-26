@@ -16,14 +16,14 @@ const GameCard = (Props: Props) => {
       <Card borderRadius={10} overflow="hidden">
         <Image src={getOptimizedImage(game.background_image)} />
         <CardBody>
-          <Heading size="md">{game.name}</Heading>
-
-          <HStack justifyContent="space-between">
+          <HStack justifyContent="space-between" marginBottom={3}>
             <PlatformList
               platforms={game.parent_platforms.map((p) => p.platform)}
             />
             <CriticScore score={game.metacritic} />
           </HStack>
+
+          <Heading fontSize={25}>{game.name}</Heading>
         </CardBody>
       </Card>
     </>
