@@ -31,6 +31,7 @@ function App() {
         <GridItem pl="2" area={"nav"} paddingBottom={1}>
           <Navbar />
         </GridItem>
+
         <Show above="lg">
           <GridItem area={"aside"} paddingX={4}>
             <GenreList
@@ -39,9 +40,10 @@ function App() {
             />
           </GridItem>
         </Show>
+
         <GridItem area={"main"}>
           <Flex paddingLeft={2} marginBottom={3}>
-            <Box marginRight={2}>
+            <Box marginRight={3}>
               <PlatformSelector
                 handleSelectedPlatform={(platform) =>
                   setGameQuery({ ...gameQuery, platform })
