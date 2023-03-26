@@ -5,6 +5,7 @@ import {
   ListItem,
   Spinner,
   Button,
+  Heading,
 } from "@chakra-ui/react";
 import useGenres, { Genre } from "./../hooks/useGenres";
 
@@ -28,6 +29,9 @@ const GenreList = ({ handleGenre, selectedGenre }: Props) => {
         />
       )}
 
+      <Heading fontSize="3xl" marginBottom={3}>
+        Genres
+      </Heading>
       <List>
         {data.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
@@ -36,6 +40,7 @@ const GenreList = ({ handleGenre, selectedGenre }: Props) => {
                 src={genre.image_background}
                 boxSize="32px"
                 borderRadius={8}
+                objectFit="cover"
               />
               <Button
                 noOfLines={1}
