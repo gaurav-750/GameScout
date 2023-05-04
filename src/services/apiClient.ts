@@ -3,7 +3,7 @@ import axios, { CanceledError } from "axios";
 export default axios.create({
   baseURL: "https://api.rawg.io/api",
   params: {
-    key: "546dbdbb9fa843d9b976724c7459e714",
+    key: "e5fd59aa1a844493a3b04b0771d10f83",
   },
 });
 
